@@ -1,0 +1,29 @@
+name: "Change Pack Version"
+
+on:
+  push:
+    branches: ["main"]
+    paths: ["manifest.json", "increasePackVersion.php"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run the version change php script
+        run: |
+          ls
+          php increasePackVersion.php
+      - name: Commit files
+        run: |
+          git config --local user.name "GitHub"
+          git add ./manifest.json
+          git tag v1.0
+          git commit -m "Updating the pack version from latest push"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+          tags: true
