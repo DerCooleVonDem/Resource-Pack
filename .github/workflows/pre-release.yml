@@ -3,7 +3,7 @@ name: "Post Pre-Release"
 on:
   push:
     tags:
-      - "version-change"
+      - "v*"
     #branches:
     #  - "main"
 
