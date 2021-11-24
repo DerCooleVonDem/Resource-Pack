@@ -3,7 +3,7 @@ name: "pre-release"
 on:
   push:
     tags:
-      - "v*"
+      - "pack-version-change"
     #branches:
     #  - "main"
 
@@ -16,6 +16,7 @@ jobs:
     - name: "Create Release"
       run: |
          rm -r increasePackVersion.php
+         git push --delete origin pack-version-change
          echo "done!"
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
