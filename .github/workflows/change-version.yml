@@ -1,9 +1,8 @@
-name: "Changeing Pack Version"
+name: "Changing Pack Version"
 
 on:
   push:
     branches: ["main"]
-    paths: ["manifest.json", "increasePackVersion.php"]
 
 jobs:
   build:
@@ -17,7 +16,7 @@ jobs:
         run: |
           git config --local user.name "GitHub"
           git add ./manifest.json
-          git tag v1.0
+          git tag automatic-pack-version-update
           git commit -m "Updating the pack version from latest push"
       - name: Push changes
         uses: ad-m/github-push-action@master
