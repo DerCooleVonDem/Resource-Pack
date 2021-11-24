@@ -3,7 +3,7 @@ name: "Post Pre-Release"
 on:
   push:
     tags:
-      - "pack-version-change"
+      - "version-change"
     #branches:
     #  - "main"
 
@@ -14,7 +14,6 @@ jobs:
 
     steps:
     - name: "Create Release"
-#              git push --delete origin pack-version-change
       run: |
          rm -r increasePackVersion.php
          rm -r .github/
