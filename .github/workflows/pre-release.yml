@@ -2,8 +2,8 @@ name: "Post Pre-Release"
 
 on:
   push:
-    tags:
-       - "pack-version-update"
+    paths:
+      - "manifest.json"
 
 jobs:
   pre-release:

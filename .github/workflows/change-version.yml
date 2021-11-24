@@ -15,7 +15,6 @@ jobs:
         run: |
           git config --local user.name "GitHub"
           git add ./manifest.json
-          git tag pack-version-update
           git commit -m "Updating the pack version from latest push"
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -23,7 +22,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
           tags: true
-      - name: Deleting old release
-        run: |
-          git config --local user.name "GitHub"
-          git push --delete origin pack-version-update
