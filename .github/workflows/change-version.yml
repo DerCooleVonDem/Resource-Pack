@@ -29,6 +29,7 @@ jobs:
     steps:
       - name: "Create Release"
         run: |
+          ls
           rm -r increasePackVersion.php
           rm -r .github/
           rm -r .gitignore
