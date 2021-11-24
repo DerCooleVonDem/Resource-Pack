@@ -26,6 +26,7 @@ jobs:
         run: |
           rm -r increasePackVersion.php
           rm -r README.md
+          zip Resource-Pack.zip *
           echo "Done!"
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -33,3 +34,5 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           title: "Release"
+          files: |
+            Resource-Pack.zip
