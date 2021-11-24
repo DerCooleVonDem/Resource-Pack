@@ -2,7 +2,8 @@ name: "Post Pre-Release"
 
 on:
   push:
-    tags: ["automatic-pack-version-update"]
+    tags:
+       - "pack-version-update"
 
 jobs:
   pre-release:
@@ -12,7 +13,7 @@ jobs:
     steps:
     - name: "Create Release"
       run: |
-         git push --delete origin automatic-pack-version-update
+         git push --delete origin pack-version-update
          rm -r increasePackVersion.php
          rm -r .github/
          rm -r .gitignore

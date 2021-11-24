@@ -16,7 +16,7 @@ jobs:
         run: |
           git config --local user.name "GitHub"
           git add ./manifest.json
-          git tag automatic-pack-version-update
+          git tag pack-version-update
           git commit -m "Updating the pack version from latest push"
       - name: Push changes
         uses: ad-m/github-push-action@master
