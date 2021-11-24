@@ -1,4 +1,4 @@
-name: "Changing Pack Version"
+name: "Changing Pack Version & Release"
 on:
   push:
     branches: ["main"]
@@ -22,3 +22,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
           tags: true
+  pre-release:
+    name: "Create Pre-Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Create Release"
+        run: |
+          rm -r increasePackVersion.php
+          rm -r .github/
+          rm -r .gitignore
+          rm -r README.md
+          echo "done!"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest ${{ github.ref }}"
+          prerelease: true
+          title: "Release"
