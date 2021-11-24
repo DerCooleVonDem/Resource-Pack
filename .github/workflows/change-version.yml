@@ -1,5 +1,4 @@
 name: "Changing Pack Version"
-
 on:
   push:
     branches: ["main"]
@@ -24,3 +23,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
           tags: true
+      - name: Deleting old release
+        run: |
+          git config --local user.name "GitHub"
+          git push --delete origin pack-version-update

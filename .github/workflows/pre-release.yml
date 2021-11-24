@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: "Create Release"
       run: |
-         git push --delete origin pack-version-update
          rm -r increasePackVersion.php
          rm -r .github/
          rm -r .gitignore
