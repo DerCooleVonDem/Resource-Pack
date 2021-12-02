@@ -2,12 +2,10 @@
 	"namespace": "server_form",
 
 	"long_form@common_dialogs.main_panel_no_buttons": {
-		//"size": [260, 210]
-		"size": [525, 500]
+		"size": [260, 245]
 	},
 
 	"custom_form@common_dialogs.main_panel_no_buttons": {
-		//"size": [260, 210]
-		"size": [525, 500]
+		"size": [260, 245]
 	}
 }
